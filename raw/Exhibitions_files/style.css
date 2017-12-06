@@ -1,0 +1,526 @@
+
+/*========================================================
+                    1. Import
+=========================================================*/
+
+@import "grid.css";
+@import "sf-menu.css";
+@import "stuck.css";
+
+@import url(//fonts.googleapis.com/css?family=Roboto:400);
+@import url(//fonts.googleapis.com/css?family=Roboto:100);
+@import url(//fonts.googleapis.com/css?family=Roboto:100italic);
+@import url(//fonts.googleapis.com/css?family=Roboto:300);
+@import url(//fonts.googleapis.com/css?family=Roboto:300italic);
+@import url(//fonts.googleapis.com/css?family=Roboto:900);
+
+/*========================================================
+                    2. Global
+=========================================================*/
+
+a[href^="tel:"]{
+  color: inherit;
+  text-decoration: none;
+}
+* {
+  -webkit-text-size-adjust: none;
+}
+
+body{
+	background-color: #fff;
+	color: #010000;
+	font: 12px/24px 'Roboto', sans-serif;
+	font-weight: 300;
+	letter-spacing: -0.3px;
+	outline: medium none !important;
+}
+h1, h3, h4, h5{
+	letter-spacing: 0;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+.link_mailto{
+	font-style: italic;
+}
+
+h3{
+	font-family: 'Roboto';
+	text-transform: uppercase;
+	font-size: 48px;
+	line-height: 60px;
+	font-weight: 900;
+}
+h4{
+	text-transform: uppercase;
+	font-size: 24px;
+	line-height: 24px;
+	font-weight: 900;	
+}
+h5{
+	font-size: 12px;
+	line-height: 12px;
+	font-weight: 100;
+	letter-spacing: 1px;
+}
+h5 time{
+	font-style: italic;
+}
+.bold{
+	font-weight: 700;
+}
+
+a:hover{
+	color: #707070
+}
+
+.btn{
+	text-transform: uppercase;
+	font-size: 30px;
+	line-height: 30px;
+	font-weight: 900;
+	letter-spacing: 1.5px;
+	display: inline-block;
+	margin-top: 29px;
+}
+.btn:hover{
+	color: #000;
+	text-decoration: underline;
+}
+
+/*========================================================
+                    3. Main layout styles
+=========================================================*/
+
+/* Header
+========================================================*/
+
+header {
+	padding-top: 51px;
+	padding-bottom: 79px;
+}
+h1{
+	margin-bottom: 27px;
+}
+#stuck_container, #stuck_container .sub-menu{
+	background: #fff;
+}
+#stuck_container{
+	padding-top: 25px;
+}
+.isStuck{
+	padding-bottom: 25px;
+}
+#stuck_container .sub-menu{
+	padding: 10px;
+	margin-top: 25px;
+}
+
+
+/* Content
+========================================================*/
+
+/* Gallery
+=============================================*/
+.gallery__indent{
+	padding-bottom: 37px;
+}
+.gallery h3{
+	margin-top: -14px;
+	margin-bottom: 38px;
+}
+.gallery li{
+	margin-bottom: 39px;
+}
+.gallery img{
+	width: 100%;
+}
+
+.gallery li{
+	position: relative;
+}
+.lbHover{
+	color: #000;
+	font-size: 50px;
+	opacity: 0;
+	position: absolute;
+	top: 34%;
+	left: 44%;
+	 -webkit-transition: all 0.2s linear 0s;
+     -moz-transition: all 0.2s linear 0s;
+     -o-transition: all 0.2s linear 0s;
+     transition: all 0.2s linear 0s;
+}
+.gallery li div:hover .lbHover{
+	opacity: 0.8;
+	 -webkit-transition: all 0.2s linear 0s;
+     -moz-transition: all 0.2s linear 0s;
+     -o-transition: all 0.2s linear 0s;
+     transition: all 0.2s linear 0s;
+}
+
+.gallery h5{
+	margin-top: 28px;
+	border-top: 1px solid #999999;
+	padding-top: 17px;
+}
+
+/* Info
+=============================================*/
+.info h3{
+	margin-bottom: 37px;
+	margin-top: -3px;
+}
+.info .info_title__indent{
+	margin-top: -14px;
+}
+.info img{
+	float: left;
+}
+.info_text-block{
+	padding-left: 23px;
+	overflow: hidden;
+}
+.info .info_text-block p{
+	margin-top: -5px;
+}
+.info .info_text-block .text-block__indent{
+	margin-top: 22px;
+}
+
+/* Info in Block
+=============================================*/
+
+.info-in-block{
+	margin-left: -20px;
+	padding-top: 50px;
+}
+.info-in-block li{
+	margin-bottom: 40px;
+}
+.info-in-block_title{
+	padding-bottom: 12px;
+	font-size: 30px;
+	line-height: 30px;
+}
+
+/* Slider
+=============================================*/
+
+#camera_wrap{
+	margin-top: 106px;
+}
+#camera_wrap .camera_caption{
+	display: none;
+}
+#camera_wrap .camera_caption{
+	position: absolute;
+	margin: 140px 105px;
+	background: rgba(0, 0, 0, 0.8);
+}
+#camera_wrap .camera_caption div{
+	padding: 35px 33px 50px;
+}
+#camera_wrap .camera_caption span{
+	font-size: 30px;
+	line-height: 36px;
+	font-weight: 300;
+	font-style: italic;
+	color: #fff;
+}
+#camera_wrap .camera_caption span span{
+	font-size: 18px;
+}
+
+
+/* Blog
+=============================================*/
+.blog__indent{
+	padding-top: 60px;
+}
+.blog h3{
+	margin-top: -14px;
+	margin-bottom: -2px;
+}
+.post_image{
+	float: left;
+	margin-right: 26px;
+}
+.post{
+	overflow: hidden;
+	margin-top: 40px;
+}
+.post_block a:hover h4{
+	text-decoration: underline;
+	color: #000;
+}
+.post_title{
+	margin-top: -4px;
+	padding-bottom: 10px;
+	margin-bottom: 19px;
+	border-bottom: 1px solid #999999;
+
+	display: inline-block;
+	width: 72%;
+}
+.post_title__width{
+	width: 65%;
+}
+.post_text{
+	margin-top: 20px;
+}
+.post_text__last{
+	margin-bottom: 0px;
+}
+
+
+/* Map
+=============================================*/
+.map {
+	margin-top: 37px;
+}
+
+.map iframe {
+	border: none;
+	width: 100%;
+	height: 370px;
+}
+
+/* Contact
+=============================================*/
+.contact{
+	margin-top: -14px;
+}
+.contact-details{
+	padding-bottom: 85px;
+}
+.contact-details > p{
+	margin-top: 27px;
+}
+.contact-details .grid_4{
+	margin-top: 30px;
+}
+.contact-details .grid_4 a{
+	margin-left: 15px;
+}
+.contact-details .bold{
+	font-size: 14px;
+	line-height: 14px;
+	margin-bottom: 5px;
+}
+.contact .phone{
+	display: inline-block;
+	min-width: 60px;
+}
+
+
+/* Privacy Policy
+=============================================*/
+
+.text-blocks p{
+	margin-bottom: 29px;
+}
+.text-blocks h3{
+	margin-top: -14px;
+	margin-bottom: 37px;
+}
+.text-blocks .text-blocks_title{
+	font-size: 14px;
+	line-height: 14px;
+	font-weight: 900;
+	margin-bottom: 5px;
+}
+
+/* To Top Button*/
+#toTop {
+    display: none;
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    left: 51%;
+    margin-left: 600px;
+    overflow: hidden;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 5px;
+    z-index: 20;
+    background-color: #707070;
+    transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    text-align: center;
+}
+#toTop i{
+    color: #fff;
+    font-size: 30px;
+    padding-top: 8px;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#toTop:hover{
+    outline: none;
+    background-color: #000;
+}
+
+/* Footer
+========================================================*/
+
+footer{
+	padding: 67px 0 80px 0;
+}
+.social{
+	display: block;
+	margin-left: -1px;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	font-size: 30px;
+	line-height: 30px;
+	font-weight: 900;
+}
+.social li{
+    display: inline-block;
+	font-size: 48px;
+	line-height: 60px;
+	font-weight: 900;
+}
+.social .social_first-child{
+	text-align: left;
+}
+
+.social li a{
+	letter-spacing: 4px;
+}
+.social li a:hover{
+	text-decoration: underline;
+     color: #000;
+}
+.pr_policy{
+	margin-top: 8px;
+	font-size: 12px;
+}
+.pr_policy span{
+	font-weight: 300;
+	letter-spacing: 1px;
+}
+
+
+/*==================================RESPONSIVE LAYOUTS===============================================*/
+@media only screen and (max-width: 1199px) {
+  	#camera_wrap .camera_caption{
+		margin: 47px 105px;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+
+}
+
+@media only screen and (max-width: 979px) {
+  	#camera_wrap .camera_caption{
+		margin: 0 105px;
+	}
+	.social li{
+		font-size: 30px;
+		line-height: 30px;
+	}
+	.post_title{
+		width: 65%;
+	}
+	.post_title__width {
+		width: 56%;
+	}
+}
+@media only screen and (max-width: 767px) {
+	.info_text-block{
+		padding-left: 0px;
+		margin-top: 20px;
+		display: inline-block;
+	}
+	.info img{
+		width: 100%
+	}
+	#camera_wrap .camera_caption div{
+		padding: 10px 25px;	
+	}
+	#camera_wrap .camera_caption span{
+		font-size: 16px;
+		line-height: 16px;
+		font-weight: 300;
+		font-style: italic;
+		color: #fff;
+	}
+	#camera_wrap .camera_caption span span{
+		font-size: 12px;
+	}
+	#camera_wrap .camera_caption{
+		margin: 20px 50px;
+	}
+	.info-in-block{
+		margin-left: 0;
+	}
+	.post_image{
+		float: none;
+	}
+	.post_title{
+		margin-top: 15px;
+		width: 100%;
+	}
+	.post_title__width {
+		width: 100%;
+	}
+	.btn{
+		margin-top: 10px;
+	}
+	.pr_policy{
+		text-align: center;
+	}
+	.social li{
+		display: block;
+	}
+	.social li, .social .social_first-child, .social .social_first-child{
+		text-align: center;
+	}
+	.social .social_slash{
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	#camera_wrap .camera_caption{
+		background: transparent;
+	}
+	#camera_wrap .camera_caption span{
+		display: none;
+	}
+	.post_image{
+		margin-right: 0;
+	}
+	h3{
+		font-size: 30px;
+		line-height: 35px;
+	}
+	h4{
+		font-size: 16px;
+		line-height: 16px;
+	}
+	.post_title{
+		margin-top: 15px;
+	}
+	.info-in-block_title{
+		font-size: 25px;
+		line-height: 25px;
+	}
+	header h1 img{
+		width: 270px;
+		height: auto;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	
+}
+/*Core variables and mixins*/
