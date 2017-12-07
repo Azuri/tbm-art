@@ -380,12 +380,15 @@ footer{
 	font-size: 30px;
 	line-height: 30px;
 	font-weight: 900;
+	margin: auto;
+	text-align: center;
 }
 .social li{
-    display: inline-block;
+	display: inline-block;
 	font-size: 48px;
 	line-height: 60px;
 	font-weight: 900;
+	padding: 0 0.3em;
 }
 .social .social_first-child{
 	text-align: left;
