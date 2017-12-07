@@ -1,0 +1,90 @@
+/*SF-Menu*/
+
+.sf-menu{
+	margin-left: -1px;
+	letter-spacing: 3px;
+	text-align: justify;
+	text-transform: uppercase;
+	font-size: 30px;
+	line-height: 30px;
+	font-weight: 900;
+	width: 100%;
+	display: table;
+}
+.sf-menu ul{
+	display: none;
+}
+.sf-menu li{
+	display: table-cell;
+    float: none;
+    text-align: center;
+	position: relative;
+}
+.sf-menu a:hover{
+	text-decoration: underline;
+    color: #000;
+}
+.sf-menu .current{
+	font-style: italic;
+}
+
+.sf-menu .with-sub-menu{
+	position: relative;
+	text-align: center;
+}
+.sf-menu .with-sub-menu:after{
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(0, 0, 0, 0);
+	border-top-color: #000000;
+	border-width: 5px;
+	margin-left: -5px;
+}
+
+.sf-menu .sf-menu_first-child{
+	text-align: left;
+}
+.sf-menu .sf-menu_last-child{
+	text-align: right;
+}
+
+.sf-menu .sub-menu{
+	z-index: 99;
+	position: absolute;
+	width: 600px;
+	margin-top: 30px;
+	margin-left: 20px;
+	box-sizing: border-box;
+	color: #000;
+	background-color: transparent;
+
+	font-size: 18px;
+	line-height: 18px;
+	font-style: normal;
+	font-weight: 900;
+}
+
+
+/*==================================RESPONSIVE LAYOUTS===============================================*/
+
+@media only screen and (max-width: 979px){
+	.sf-menu{
+		font-size: 22px;
+		line-height: 22px;
+	}
+	.sf-menu .sub-menu{
+		font-size: 14px;
+		line-height: 14px;
+	}
+}
+@media only screen and (max-width: 767px){
+	.sf-menu{
+		display: none;
+	}
+}
