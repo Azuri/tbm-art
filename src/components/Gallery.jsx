@@ -2,6 +2,8 @@ import React from 'react';
 
 import Image from './Image.jsx';
 
+import { open } from '../actions/touch-gallery';
+
 class Gallery extends React.Component {
   render(){
     let images = [
@@ -18,8 +20,10 @@ class Gallery extends React.Component {
     return (
       <div className="container gallery thumbs">
         <ul className="row">
-          {images.map((image, index) => {
-            return <Image {...image} />
+          {images.map((img, idx) => {
+            return <Image {...img} onClick={(e) => {
+              this.props.onImageClick(images, idx);
+            }} />
           })}
         </ul>
       </div>
@@ -27,4 +31,13 @@ class Gallery extends React.Component {
   }
 }
 
-export default Gallery;
+const mapDispatchToProps = dispatch => {
+  return {
+    onImageClick(images, idx) {
+      dispatch(open(images, idx));
+    }
+  }
+}
+
+import { connect } from 'react-redux';
+export default connect()(Gallery);

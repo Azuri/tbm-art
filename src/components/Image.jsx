@@ -1,4 +1,6 @@
 import React from 'react';
+import jQuery from '../js/jquery-3.2.1.min';
+//import touchTouch from '../js/touchTouch.jquery';
 
 class Image extends React.Component {
   render(){
@@ -15,7 +17,7 @@ class Image extends React.Component {
         <h5>
           <a href="#">{this.props.title}</a>
           /
-          <time datetime="2014-01">
+          <time dateTime="2014-01">
             <a href="#">January 2014</a>
           </time>
         </h5>
