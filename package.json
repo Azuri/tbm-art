@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "./node_modules/.bin/webpack-dev-server --port 80",
-    "postinstall": "webpack -p",
+    "postinstall": "./node_modules/.bin/webpack -p",
     "prod": "node server.js"
   },
   "keywords": [
