@@ -2,6 +2,7 @@ import React from 'react';
 
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
+import SocialMedia from './SocialMedia.jsx';
 import Gallery from './Gallery.jsx';
 import TouchGallery from './TouchGallery/Index.jsx';
 
@@ -14,7 +15,7 @@ class Home extends React.Component {
         <TouchGallery />
         <Footer />
       </div>
-    );
+    )
   }
 }
 

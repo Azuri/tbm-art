@@ -5,6 +5,8 @@ import {
   next, prev, close
 } from '../../actions/touch-gallery';
 
+import Overlay from './Overlay.jsx';
+
 class TouchGallery extends React.Component {
   constructor(props){
     super(props);
@@ -14,9 +16,9 @@ class TouchGallery extends React.Component {
   
   handleKeyPress(e){
     switch(e.keyCode) {
-      case 37: this.props.prevImage(); break;
-      case 39: this.props.nextImage(); break;
-      case 27: this.props.closeOverlay(); break;
+      case 37: this.props.onLeftClick(); break;
+      case 39: this.props.onRightClick(); break;
+      case 27: this.props.onClick(); break;
     }
   }
 
@@ -32,7 +34,7 @@ class TouchGallery extends React.Component {
   componentWillUnmount(){
     window.removeEventListener('keyup', this.handleKeyPress);
   }
-
+/*
   renderImg(img, idx){
     let min = Math.max(this.props.current-1, 0),
         max = Math.min(this.props.current+1, this.props.images.length);
@@ -46,6 +48,7 @@ class TouchGallery extends React.Component {
 
     return null;
   }
+*/
 
   render(){
     if (this.props.images.length == 0) {
@@ -53,32 +56,7 @@ class TouchGallery extends React.Component {
     }
 
     return (
-      <div id="gallery-overlay"
-           className="visible"
-           style={{ display: 'block' }}
-           onClick={this.props.closeOverlay}>
-        <div id="gallery-slider" style={{
-          left: ` -${this.props.current*100}%`
-        }}>
-          {this.props.images.map((img, idx) => {
-            return (
-              <div className="placeholder" key={idx}>
-                {this.renderImg(img,idx)}
-              </div>
-            )
-          })}
-        </div>
-
-        <a id="prev-arrow" onClick={(e) => {
-          e.stopPropagation();
-          this.props.prevImage();
-        }}></a>
-
-        <a id="next-arrow" onClick={(e) => {
-          e.stopPropagation();
-          this.props.nextImage();
-        }}></a>
-      </div>
+      <Overlay {...this.props} onKeyPress={this.handleKeyPress}/>
     )
   }
 }
@@ -89,13 +67,13 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = distpatch => {
   return {
-    closeOverlay() {
+    onClick() {
       distpatch(close());
     },
-    nextImage() {
+    onRightClick() {
       distpatch(next());
     },
-    prevImage() {
+    onLeftClick() {
       distpatch(prev());
     }
   }
@@ -104,5 +82,5 @@ const mapDispatchToProps = distpatch => {
 import { connect } from 'react-redux';
 export default connect(
   mapStateToProps,
-  mapDispatchToProps)
-(TouchGallery);
+  mapDispatchToProps
+)(TouchGallery);
