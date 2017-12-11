@@ -1,12 +1,10 @@
 import React from 'react';
-import jQuery from '../js/jquery-3.2.1.min';
-//import touchTouch from '../js/touchTouch.jquery';
 
 class Image extends React.Component {
   render(){
     return (
-      <li className="grid_4">
-        <a href={this.props.src} className="thumbs_img">
+      <div>
+        <a href={this.props.src} className="thumbs_img" onClick={this.props.onClick}>
           <div>
             <div className="lbHover">
               <i className="fa fa-search"></i>
@@ -21,7 +19,7 @@ class Image extends React.Component {
             <a href="#">January 2014</a>
           </time>
         </h5>
-      </li>
+      </div>
     )
   }
 }

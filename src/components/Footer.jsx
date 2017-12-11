@@ -7,7 +7,7 @@ class Header extends React.Component {
   render() {
     return (
       <footer>
-        <div class="container">
+        <div className="container">
           <SocialMedia />
           <Policy />
         </div>

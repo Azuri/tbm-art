@@ -9,6 +9,7 @@ class TouchGallery extends React.Component {
   constructor(props){
     super(props);
     this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.cache = {};
   }
   
   handleKeyPress(e){
@@ -22,7 +23,6 @@ class TouchGallery extends React.Component {
   handleTouch(e){
     let touch = e.originalEvent.touches[0] ||
                 e.originalEvent.changedTouches[0];
-    if (e.origina)
   }
 
   componentDidMount(){
@@ -33,8 +33,22 @@ class TouchGallery extends React.Component {
     window.removeEventListener('keyup', this.handleKeyPress);
   }
 
+  renderImg(img, idx){
+    let min = Math.max(this.props.current-1, 0),
+        max = Math.min(this.props.current+1, this.props.images.length);
+    
+    if (this.cache[idx] || idx >= min && idx <= max) {
+      this.cache[idx] = true;
+      return (
+        <img src={img.src} />
+      )
+    }
+
+    return null;
+  }
+
   render(){
-    if (this.state.images.length == 0) {
+    if (this.props.images.length == 0) {
       return null;
     }
 
@@ -44,13 +58,12 @@ class TouchGallery extends React.Component {
            style={{ display: 'block' }}
            onClick={this.props.closeOverlay}>
         <div id="gallery-slider" style={{
-          left: [' -', this.props.current*100, '%'].join('')
+          left: ` -${this.props.current*100}%`
         }}>
           {this.props.images.map((img, idx) => {
             return (
               <div className="placeholder" key={idx}>
-                <img src={img.src} />
-                <span>foo bar baz</span>
+                {this.renderImg(img,idx)}
               </div>
             )
           })}
