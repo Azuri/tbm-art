@@ -9,7 +9,10 @@ class Image extends React.Component {
             <div className="lbHover">
               <i className="fa fa-search"></i>
             </div>
-            <img src={this.props.thumb} alt={this.props.title} title={this.props.description} />
+            <img
+              src={this.props.thumb}
+              alt={this.props.title}
+              title={this.props.description} />
           </div>
         </a>
         <h5>
