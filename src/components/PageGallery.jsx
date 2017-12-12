@@ -11,7 +11,7 @@ class PageHome extends React.Component {
     return (
       <div>
         <Header />
-        <Gallery gridSize="grid_4" />
+        <Gallery gridSize="grid_6" />
         <Overlay />
         <Footer />
       </div>

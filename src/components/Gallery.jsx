@@ -11,7 +11,7 @@ class Gallery extends React.Component {
         <ul className="row">
           {this.props.images.map((img, idx) => {
             return (
-              <li className="grid_4" key={idx}>
+              <li className={this.props.gridSize} key={idx}>
                 <Image {...img} onClick={(e) => {
                   e.preventDefault();
                   this.props.onImageClick(this.props.images, idx);
