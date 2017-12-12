@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Home from './components/Home.jsx';
+import PageHome from './components/PageHome.jsx';
 
 import { Provider } from 'react-redux';
 
@@ -9,7 +9,7 @@ import store from './store';
 
 ReactDOM.render(
   <Provider store={store}>
-    <Home />
+    <PageHome />
   </Provider>,
 
   document.getElementById('app')
